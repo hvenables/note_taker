@@ -1,8 +1,8 @@
 # NoteTaker
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/note_taker`. To experiment with that code, run `bin/console` for an interactive prompt.
+Just a small ruby gem to help you keep your notes.
 
-TODO: Delete this and the text above, and describe your gem
+It uses your default editor ($EDITOR) to open the markdown notes that it creates.
 
 ## Installation
 
@@ -12,12 +12,11 @@ To use note_taker just install it with the below
 
 ## Usage
 
-note_taker expects to find a note_config.yaml at the root level. It expects you to define where it should store the
-notes
-
+The default directory is `~/work_notes` if you want to change this you need to add a `~/.note_config.yaml`. Then add the
+following to the config
 ```yaml
 general:
-  directory: notes
+  directory: <path-to-notes-dir>
 ```
 
 ## Development

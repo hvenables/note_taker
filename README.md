@@ -6,23 +6,19 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'note_taker'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
+To use note_taker just install it with the below
 
     $ gem install note_taker
 
 ## Usage
 
-TODO: Write usage instructions here
+note_taker expects to find a note_config.yaml at the root level. It expects you to define where it should store the
+notes
+
+```yaml
+general:
+  directory: notes
+```
 
 ## Development
 

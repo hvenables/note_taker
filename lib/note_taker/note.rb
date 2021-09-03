@@ -29,7 +29,7 @@ class Note
     end
 
     def dir
-      NoteApplication.config['general']['directory']
+      NoteTaker.config['general']['directory']
     end
 
     def prompt
@@ -52,12 +52,12 @@ class Note
   def view
     catch(:note_quit) do
       loop do
-        NoteApplication.header unless NoteApplication.inline?
+        NoteTaker.header unless NoteTaker.inline?
         parsed = TTY::Markdown.parse_file(file_path)
-        NoteApplication.options[:inline] ? puts(parsed) : prompt.puts(parsed)
+        NoteTaker.options[:inline] ? puts(parsed) : prompt.puts(parsed)
         prompt.puts("\n")
 
-        break if NoteApplication.inline?
+        break if NoteTaker.inline?
 
         note_menu
       end

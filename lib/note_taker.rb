@@ -3,6 +3,12 @@
 require_relative "note_taker/version"
 require_relative 'note_taker/note.rb'
 
+require 'yaml'
+require 'getoptlong'
+require 'tty-editor'
+require 'tty-markdown'
+require 'tty-prompt'
+
 module NoteTaker
   class Error < StandardError; end
 

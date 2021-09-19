@@ -37,6 +37,7 @@ module NoteTaker
 
     def run
       fetch_options
+      check_directory_exists!
 
       catch(:app_quit) { inline? ? run_inline : run_fullscreen }
 
@@ -85,6 +86,10 @@ module NoteTaker
       end
 
       @options = { help: help, quick_edit: quick_edit, view: view, inline: inline }
+    end
+
+    def check_directory_exists!
+      exit 1 unless system("ls ~/#{config['general']['directory']}")
     end
 
     def run_inline
